@@ -19,7 +19,7 @@ function createCard(cardData, deleteCallback, onCardClickFunction, likeFunction)
     const deleteButton = cardElement.querySelector('.card__delete-button');
 
     cardImage.src = cardData.link;
-    cardImage.alt = cardData.name;  // Исправлено: cardImage.alt вместо cardTitle.alt
+    cardImage.alt = cardData.name;  
     cardTitle.textContent = cardData.name;
 
     deleteButton.addEventListener('click', () => {

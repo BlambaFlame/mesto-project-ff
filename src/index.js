@@ -1,7 +1,7 @@
 import './pages/index.css';
 
 import { initialCards } from './components/cards.js';
-import { createCard, deleteCard, likeCard } from './components/card.js';  // Добавлены импорты
+import { createCard, deleteCard, likeCard } from './components/card.js';  
 import { openModal, closeModal, setModalWindowEventListeners } from './components/modal.js';
 
 const formEditProfile = document.querySelector('[name="edit-profile"]');
