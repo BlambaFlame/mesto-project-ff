@@ -1,7 +1,7 @@
 import './pages/index.css';
 
 import { initialCards } from './components/cards.js';
-import { createCard } from './components/card.js';
+import { createCard, deleteCard, likeCard } from './components/card.js';  // Добавлены импорты
 import { openModal, closeModal, setModalWindowEventListeners } from './components/modal.js';
 
 const formEditProfile = document.querySelector('[name="edit-profile"]');
@@ -21,16 +21,6 @@ const popupImage = imagePopup.querySelector('.popup__image');
 const popupCaption = imagePopup.querySelector('.popup__caption');
 
 const placesList = document.querySelector('.places__list');
-
-// Функция удаления карточки
-function deleteCard(cardElement) {
-    cardElement.remove();
-}
-
-// Функция лайка карточки
-function likeCard(likeButton) {
-    likeButton.classList.toggle("card__like-button_is-active");
-}
 
 // Функция открытия попапа с картинкой
 function openCardPopup(title, link) {

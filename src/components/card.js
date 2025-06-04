@@ -1,18 +1,28 @@
-export { createCard };
+export { createCard, deleteCard, likeCard };
 
 const cardTemplate = document.querySelector('#card-template').content;
 
-function createCard (cardData, deleteCallback, onCardClickFunction, likeFunction) {
+// Функция удаления карточки
+function deleteCard(cardElement) {
+    cardElement.remove();
+}
+
+// Функция лайка карточки
+function likeCard(likeButton) {
+    likeButton.classList.toggle("card__like-button_is-active");
+}
+
+function createCard(cardData, deleteCallback, onCardClickFunction, likeFunction) {
     const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
     const cardImage = cardElement.querySelector('.card__image');
     const cardTitle = cardElement.querySelector('.card__title');
     const deleteButton = cardElement.querySelector('.card__delete-button');
 
     cardImage.src = cardData.link;
-    cardTitle.alt = cardData.name;
+    cardImage.alt = cardData.name;  // Исправлено: cardImage.alt вместо cardTitle.alt
     cardTitle.textContent = cardData.name;
 
-    deleteButton.addEventListener ('click', () => {
+    deleteButton.addEventListener('click', () => {
         deleteCallback(cardElement);
     });
 
@@ -21,7 +31,7 @@ function createCard (cardData, deleteCallback, onCardClickFunction, likeFunction
         likeFunction(event.target);
     });
 
-    cardImage.addEventListener('click', () =>
+    cardImage.addEventListener('click', () => 
         onCardClickFunction(cardData.name, cardData.link));
 
     return cardElement;
