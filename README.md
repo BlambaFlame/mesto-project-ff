@@ -27,3 +27,7 @@ Mesto — это учебный проект, разработанный в ра
 
 <h3>Ссылка на репозиторий:</h3> 
 https://github.com/BlambaFlame/mesto-project-ff
+
+<h3>Ссылка на сайт:</h3>
+ https://BlambaFlame.github.io/mesto-project-ff
+ 
